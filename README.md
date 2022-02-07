@@ -12,6 +12,8 @@ Documentation for patchworks API.
 
 ## Introduction
 
+Our API uses [GraphQL](https://graphql.org/) for data ingestion (mutations) and queries. You can explore are schema online using any graphql explorer.
+
 You will need a client ID and a client secret key to access our API. These are used to generate a JSON Web Token (Authorization Bearer) that must be supplied in the HTTP header request. Please keep the client secret private and never include it in source control.
 
 ## Authentication
@@ -39,7 +41,7 @@ curl --request POST \
 
 You can use https://jwt.io/ to decode and verify your JWT.
 
-You will need to add the HTTP header Authorization Bearer to API endpoints and include your JWT.
+You will need to add the HTTP header Authorization Bearer and include your JWT to reach endpoints.
 
 ```bash
 curl --request POST \
