@@ -9,7 +9,7 @@ Documentation for patchworks API.
 - [JWT](#jwt)
 - [GraphiQL Sandbox](#graphiql-sandbox)
 - [Quickstart Guides](#quickstart-guides)
-- [Postman](#postman)
+- [Quickstart for Postman](#quickstart-for-postman)
 
 ## Introduction
 
@@ -84,8 +84,8 @@ A collection of useful links to get up and running quickly
 - [Auth0 Next.js quick start](https://github.com/gopatchworks/nextjs-auth0)
 - [GraphiQL Sandbox](https://codesandbox.io/s/graphiql-js-example-oc851)
 
-## Postman
+## Quickstart For Postman
 
-- [Enabling GraphQL auto complete](https://www.postman.com/graphql/)
-- [Quick Start](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
 - [Auth0 collections for Postman](https://auth0.com/blog/introducing-auth0-collections-for-postman/)
+- [GraphQL Quick Start](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
+- [Enabling GraphQL auto complete](https://www.postman.com/graphql/)
