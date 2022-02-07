@@ -12,9 +12,11 @@ Documentation for patchworks API.
 
 ## Introduction
 
+You will need a client ID and a client secret key to access our API. These can be used to generate a JSON Web Token, which our API servers will use in the HTTP header to authenicate requests.
+
 ## Authentication
 
-Our API authentication is handled by https://auth0.com/. They have a vast array of SDKs on github https://github.com/auth0 You can sign up for a free account with them and use it to explore and debug OAuth 2.0 and OpenID connect. You will need a valid JSON Web Token to access our API.
+Our API authentication is handled by [Auth0](https://auth0.com/). They have a vast array of SDKs on [Github](https://github.com/auth0). You can sign up for a free account and use it to explore and test OAuth 2.0 and OpenID connect authentication. You will need a valid JSON Web Token to access our API.
 
 ## JWT
 
@@ -37,6 +39,15 @@ curl --request POST \
 ```
 
 You can use https://jwt.io/ to decode and verify your JWT.
+
+You will need to add the HTTP header Authorization Bearer to API endpoints and include your JWT.
+
+```bash
+curl --request POST \
+  --url https://{API_ENDPOINT}/api \
+  --header 'authorization: Bearer ${ACCESS_TOKEN}' \
+  --header 'content-type: application/json'
+```
 
 ## GraphiQL Sandbox
 
