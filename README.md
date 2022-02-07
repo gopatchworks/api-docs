@@ -12,7 +12,7 @@ Documentation for patchworks API.
 
 ## Introduction
 
-You will need a client ID and a client secret key to access our API. These can be used to generate a JSON Web Token, which our API servers will use in the HTTP header to authenicate requests.
+You will need a client ID and a client secret key to access our API. These are used to generate a JSON Web Token (Authorization Bearer) that must be supplied in the HTTP header request. Please keep the client secret private and never include it in source control.
 
 ## Authentication
 
