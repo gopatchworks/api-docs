@@ -23,19 +23,18 @@ Our API authentication is handled by [Auth0](https://auth0.com/). They have a va
 To generate a JSON Web Token for access.
 
 ```bash
-# 
-YOUR_DOMAIN=wearepatchworks.eu.auth0.com
-YOUR_CLIENT_ID='YOUR_AUTH0_CLIENT_ID'
-YOUR_CLIENT_SECRET='YOUR_AUTH0_CLIENT_SECRET'
-YOUR_API_IDENTIFIER="https://api.eudo1.wearepatchworks.io"
+DOMAIN=wearepatchworks.eu.auth0.com
+CLIENT_ID='YOUR_AUTH0_CLIENT_ID'
+CLIENT_SECRET='YOUR_AUTH0_CLIENT_SECRET'
+API_IDENTIFIER="https://api.eudo1.wearepatchworks.io"
 curl --request POST \
   --silent \
-  --url "https://$YOUR_DOMAIN/oauth/token" \
+  --url "https://$DOMAIN/oauth/token" \
   --header "content-type: application/x-www-form-urlencoded" \
   --data grant_type=client_credentials \
-  --data client_id=$YOUR_CLIENT_ID \
-  --data client_secret=$YOUR_CLIENT_SECRET \
-  --data audience=$YOUR_API_IDENTIFIER
+  --data client_id=$CLIENT_ID \
+  --data client_secret=$CLIENT_SECRET \
+  --data audience=$API_IDENTIFIER
 ```
 
 You can use https://jwt.io/ to decode and verify your JWT.
