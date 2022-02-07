@@ -86,5 +86,5 @@ A collection of useful links to get up and running quickly
 
 ## Postman
 
-- [Enabling Autocomplete](https://www.postman.com/graphql/)
+- [Enabling GraphQL auto complete](https://www.postman.com/graphql/)
 - [Quick Start](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
