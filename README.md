@@ -88,3 +88,4 @@ A collection of useful links to get up and running quickly
 
 - [Enabling GraphQL auto complete](https://www.postman.com/graphql/)
 - [Quick Start](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
+- [Auth0 collections for Postman](https://auth0.com/blog/introducing-auth0-collections-for-postman/)
