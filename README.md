@@ -10,6 +10,7 @@ Documentation for patchworks API.
 - [GraphiQL Sandbox](#graphiql-sandbox)
 - [Quickstart Guides](#quickstart-guides)
 - [Quickstart for Postman](#quickstart-for-postman)
+- [API Response Codes](#api-response-codes)
 
 ## Introduction
 
@@ -90,3 +91,9 @@ A collection of useful links to get up and running quickly
 - [Auth0 collections for Postman](https://auth0.com/blog/introducing-auth0-collections-for-postman/)
 - [GraphQL Quick Start](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
 - [Enabling GraphQL auto complete](https://www.postman.com/graphql/)
+
+## API Response Codes
+
+1. 200 - Request successfully recieved. All responses are returned in json, including error codes.
+1. 403 - Forbidden. Includes unknown endpoints.
+1. 500 - Internal Server Error. 
