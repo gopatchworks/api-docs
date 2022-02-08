@@ -96,4 +96,4 @@ A collection of useful links to get up and running quickly
 
 1. 200 - Request successfully recieved. All responses are returned in json, including error codes.
 1. 403 - Forbidden. Includes unknown endpoints.
-1. 500 - Internal Server Error. 
+1. 500 - Internal Server Error.
