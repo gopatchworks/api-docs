@@ -29,7 +29,7 @@ To generate a JSON Web Token for access.
 CLIENT_ID="YOUR_AUTH0_CLIENT_ID"
 CLIENT_SECRET="YOUR_AUTH0_CLIENT_SECRET"
 DOMAIN="wearepatchworks.eu.auth0.com"
-API_ENDPOINT="https://api.eudo1.wearepatchworks.io"
+AUDIENCE="https://sandbox.wearepatchworks.io"
 curl --request POST \
   --silent \
   --url "https://$DOMAIN/oauth/token" \
@@ -37,7 +37,7 @@ curl --request POST \
   --data grant_type=client_credentials \
   --data client_id=$CLIENT_ID \
   --data client_secret=$CLIENT_SECRET \
-  --data audience=$API_ENDPOINT
+  --data audience=$AUDIENCE
 ```
 
 You can use https://jwt.io/ to decode and verify your JWT.
@@ -46,7 +46,7 @@ You will need to include the HTTP header Authorization Bearer with your JWT to r
 
 ```bash
 curl --request POST \
-  --url https://api.eudo1.wearepatchworks.io/v1/graphql \
+  --url https://api.sandbox.wearepatchworks.io/v1/graphql \
   --header "authorization: Bearer ${ACCESS_TOKEN}" \
   --header "content-type: application/json" \
   -d '{"query":"query { pworganization { id name description } }"}'
@@ -60,8 +60,8 @@ To view, write, and test mutations and queries in our online GraphiQL sandbox.
 CLIENT_ID="YOUR_AUTH0_CLIENT_ID"
 CLIENT_SECRET="YOUR_AUTH0_CLIENT_SECRET"
 DOMAIN="wearepatchworks.eu.auth0.com"
-API_ENDPOINT="https://api.eudo1.wearepatchworks.io"
-GRAPHQL_ENDPOINT="${API_ENDPOINT}/v1/graphql"
+AUDIENCE="https://sandbox.wearepatchworks.io"
+GRAPHQL_ENDPOINT="https://api.sandbox.wearepatchworks.io/v1/graphql"
 ACCESS_TOKEN=$(curl --request POST \
   --silent \
   --url "https://$DOMAIN/oauth/token" \
@@ -69,10 +69,10 @@ ACCESS_TOKEN=$(curl --request POST \
   --data grant_type=client_credentials \
   --data client_id=$CLIENT_ID \
   --data client_secret=$CLIENT_SECRET \
-  --data audience=$API_ENDPOINT \
+  --data audience=$AUDIENCE \
   | jq -r .access_token
 )
-echo "https://cloud.hasura.io/public/graphiql?endpoint=https://talented-flamingo-73.hasura.app/v1/graphql&header=Authorization: Bearer ${ACCESS_TOKEN}"
+echo "https://cloud.hasura.io/public/graphiql?endpoint=${GRAPHQL_ENDPOINT}&header=Authorization: Bearer ${ACCESS_TOKEN}"
 ```
 
 Paste the generated link into your browser.
