@@ -45,9 +45,8 @@ You can use https://jwt.io/ to decode and verify your JWT.
 You will need to include the HTTP header Authorization Bearer with your JWT to reach endpoints.
 
 ```bash
-GRAPHQL_ENDPOINT="${API_ENDPOINT}/v1/graphql"
 curl --request POST \
-  --url $GRAPHQL_ENDPOINT \
+  --url https://api.eudo1.wearepatchworks.io/v1/graphql \
   --header "authorization: Bearer ${ACCESS_TOKEN}" \
   --header "content-type: application/json" \
   -d '{"query":"query { pworganization { id name description } }"}'
