@@ -13,7 +13,7 @@ Documentation for patchworks API.
 
 ## Introduction
 
-Our API uses [GraphQL](https://graphql.org/) for data ingestion (mutations) and queries. You can explore our schema online using any graphql explorer.
+Our API uses [GraphQL](https://graphql.org/) for data ingestion (mutations) and queries. You can view our online schema using any graphql explorer.
 
 You will need a client ID and a client secret key to access our API. These are used to generate a JSON Web Token (Authorization Bearer) that must be supplied in the HTTP header request. Please keep the client secret private and never include it in source control.
 
@@ -26,10 +26,10 @@ Our API authentication is handled by [Auth0](https://auth0.com/). They have a va
 To generate a JSON Web Token for access.
 
 ```bash
-DOMAIN=wearepatchworks.eu.auth0.com
-CLIENT_ID='YOUR_AUTH0_CLIENT_ID'
-CLIENT_SECRET='YOUR_AUTH0_CLIENT_SECRET'
-API_IDENTIFIER="https://api.eudo1.wearepatchworks.io"
+CLIENT_ID="YOUR_AUTH0_CLIENT_ID"
+CLIENT_SECRET="YOUR_AUTH0_CLIENT_SECRET"
+DOMAIN="wearepatchworks.eu.auth0.com"
+API_ENDPOINT="https://api.eudo1.wearepatchworks.io"
 curl --request POST \
   --silent \
   --url "https://$DOMAIN/oauth/token" \
@@ -37,18 +37,20 @@ curl --request POST \
   --data grant_type=client_credentials \
   --data client_id=$CLIENT_ID \
   --data client_secret=$CLIENT_SECRET \
-  --data audience=$API_IDENTIFIER
+  --data audience=$API_ENDPOINT
 ```
 
 You can use https://jwt.io/ to decode and verify your JWT.
 
-You will need to add the HTTP header Authorization Bearer and include your JWT to reach endpoints.
+You will need to include the HTTP header Authorization Bearer with your JWT to reach endpoints.
 
 ```bash
+GRAPHQL_ENDPOINT="${API_ENDPOINT}/v1/graphql"
 curl --request POST \
-  --url https://{API_ENDPOINT}/api \
-  --header 'authorization: Bearer ${ACCESS_TOKEN}' \
-  --header 'content-type: application/json'
+  --url $GRAPHQL_ENDPOINT \
+  --header "authorization: Bearer ${ACCESS_TOKEN}" \
+  --header "content-type: application/json" \
+  -d '{"query":"query { pworganization { id name description } }"}'
 ```
 
 ## GraphiQL Sandbox
@@ -56,9 +58,9 @@ curl --request POST \
 To view, write, and test mutations and queries in our online GraphiQL sandbox.
 
 ```bash
-DOMAIN=wearepatchworks.eu.auth0.com
-CLIENT_ID='YOUR_AUTH0_CLIENT_ID'
-CLIENT_SECRET='YOUR_AUTH0_CLIENT_SECRET'
+CLIENT_ID="YOUR_AUTH0_CLIENT_ID"
+CLIENT_SECRET="YOUR_AUTH0_CLIENT_SECRET"
+DOMAIN="wearepatchworks.eu.auth0.com"
 API_ENDPOINT="https://api.eudo1.wearepatchworks.io"
 GRAPHQL_ENDPOINT="${API_ENDPOINT}/v1/graphql"
 ACCESS_TOKEN=$(curl --request POST \
