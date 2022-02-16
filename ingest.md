@@ -12,7 +12,7 @@ Documentation for Patchworks Ingest API.
 
 You must first create an endpoint using the service id you receive from our developers. Then you can send payloads to this endpoint. You can send multiple payloads for several services in one request, up to 4MiB. This can greatly improve performance and prevent unwanted throttling.
 
-You can login to our api sand box to write test your queries https://graphiql.sandbox.wearepatchworks.io/
+You can login to our API sandbox to write test your queries https://graphiql.sandbox.wearepatchworks.io/
 
 ## Create Endpoint
 
